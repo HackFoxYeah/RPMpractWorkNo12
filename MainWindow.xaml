@@ -1,0 +1,61 @@
+﻿<Window x:Class="practicalWorkNo12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practicalWorkNo12"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450"
+        Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu Margin="0,0,0,392">
+            <MenuItem Header="Окно">
+                <MenuItem
+                    Header="Справка"
+                    Click="ShowInfo_Click"/>
+                <MenuItem
+                    Header="Закрыть окно"
+                    Click="Close_Click"/>
+            </MenuItem>
+            <MenuItem Header="Функции">
+                <MenuItem
+                    Header="Выполнить расчёты"
+                    Click="BtnDoATask_Click"/>
+            </MenuItem>
+        </Menu>
+        <Button 
+            x:Name="BtnDoATask"
+            Content="Выполнить расчёты"
+            Margin="0,369,0,0"
+            VerticalAlignment="Top"
+            Height="30"
+            Width="330"
+            FontSize="18"
+            HorizontalAlignment="Center"
+            IsEnabled="False"
+            Click="BtnDoATask_Click"/>
+
+        <GroupBox Header="-" Margin="100,54,100,90">
+            <DockPanel LastChildFill="True">
+                <TextBox 
+                DockPanel.Dock="Bottom"
+                x:Name="tbInput"
+                TextWrapping="Wrap"
+                Width="230"
+                Height="61"
+                FontSize="48"
+                TextChanged="TbInput_TextChanged"/>
+                <TextBox 
+                DockPanel.Dock="Top"
+                x:Name="tbResult"
+                TextWrapping="Wrap"
+                FontSize="24"
+                IsReadOnly="True" Height="122"/>
+            </DockPanel>
+        </GroupBox>
+    </Grid>
+</Window>
